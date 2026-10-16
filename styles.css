@@ -1,0 +1,473 @@
+/* ---------------------------------------------------------------
+   Company Register for Salesforce — marketing site
+   Self-contained: no external fonts, no CDN, no build step.
+   --------------------------------------------------------------- */
+
+:root {
+  --ink: #0c1b22;
+  --ink-soft: #46606c;
+  --ink-faint: #7b929c;
+  --bg: #ffffff;
+  --bg-alt: #f3f7f8;
+  --bg-deep: #0c2730;
+  --line: #dde7ea;
+  --brand: #0d6e7a;
+  --brand-strong: #0a545e;
+  --brand-tint: #e3f2f3;
+  --accent: #d98324;
+  --shadow: 0 1px 2px rgba(12, 39, 48, .06), 0 12px 32px rgba(12, 39, 48, .09);
+  --shadow-lg: 0 2px 4px rgba(12, 39, 48, .06), 0 28px 60px rgba(12, 39, 48, .16);
+  --radius: 14px;
+  --maxw: 1140px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e8f1f3;
+    --ink-soft: #a7bfc7;
+    --ink-faint: #7d96a0;
+    --bg: #0b171c;
+    --bg-alt: #101f26;
+    --bg-deep: #081317;
+    --line: #1e343d;
+    --brand: #4fc3cf;
+    --brand-strong: #7adbe5;
+    --brand-tint: #11303a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
+    --shadow-lg: 0 2px 4px rgba(0, 0, 0, .4), 0 28px 60px rgba(0, 0, 0, .55);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #e8f1f3;
+  --ink-soft: #a7bfc7;
+  --ink-faint: #7d96a0;
+  --bg: #0b171c;
+  --bg-alt: #101f26;
+  --bg-deep: #081317;
+  --line: #1e343d;
+  --brand: #4fc3cf;
+  --brand-strong: #7adbe5;
+  --brand-tint: #11303a;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, .4), 0 28px 60px rgba(0, 0, 0, .55);
+}
+
+/* --- language switching -------------------------------------- */
+:root[data-lang="de"] [data-lang="en"] { display: none !important; }
+:root[data-lang="en"] [data-lang="de"] { display: none !important; }
+
+/* --- base ----------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { line-height: 1.18; letter-spacing: -.02em; margin: 0; }
+h1 { font-size: clamp(2.1rem, 5.2vw, 3.4rem); font-weight: 760; }
+h2 { font-size: clamp(1.55rem, 3.4vw, 2.3rem); font-weight: 720; }
+h3 { font-size: 1.12rem; font-weight: 680; }
+p { margin: 0; }
+
+a { color: var(--brand); }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+
+section { padding: 72px 0; }
+@media (min-width: 760px) { section { padding: 96px 0; } }
+
+.alt { background: var(--bg-alt); }
+
+.eyebrow {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+
+.lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 62ch; }
+
+.section-head { max-width: 66ch; margin-bottom: 44px; }
+.section-head p { margin-top: 14px; color: var(--ink-soft); }
+
+/* --- header --------------------------------------------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.brand svg { flex: none; }
+
+.nav-links {
+  display: none;
+  gap: 22px;
+  margin-left: auto;
+  font-size: .93rem;
+}
+.nav-links a { color: var(--ink-soft); text-decoration: none; }
+.nav-links a:hover { color: var(--brand); }
+@media (min-width: 900px) { .nav-links { display: flex; } }
+
+.nav-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+@media (min-width: 900px) { .nav-actions { margin-left: 22px; } }
+
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.lang button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-faint);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 650;
+  padding: 5px 13px;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+
+/* --- buttons -------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: .98rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--brand); color: #fff; box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--brand-strong); }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: var(--bg); }
+.btn-sm { padding: 8px 16px; font-size: .88rem; }
+
+/* --- hero ----------------------------------------------------- */
+.hero {
+  padding: 60px 0 0;
+  background:
+    radial-gradient(900px 420px at 15% -8%, var(--brand-tint), transparent 70%),
+    radial-gradient(700px 360px at 92% 4%, var(--brand-tint), transparent 68%);
+}
+@media (min-width: 760px) { .hero { padding: 84px 0 0; } }
+
+.hero h1 { margin-bottom: 20px; max-width: 16ch; }
+.hero .lead { font-size: 1.2rem; }
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .78rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--brand-tint);
+  color: var(--brand-strong);
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+}
+.badge.neutral { background: transparent; color: var(--ink-faint); border-color: var(--line); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-note { margin-top: 16px; font-size: .9rem; color: var(--ink-faint); }
+
+.hero-shot { margin-top: 52px; }
+
+/* --- screenshot frame ----------------------------------------- */
+.shot {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-alt);
+  box-shadow: var(--shadow);
+}
+.shot.big { box-shadow: var(--shadow-lg); }
+.shot img { display: block; width: 100%; height: auto; }
+
+.shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  background: color-mix(in srgb, var(--bg-alt) 70%, var(--line));
+  border-bottom: 1px solid var(--line);
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-faint); opacity: .32; }
+.shot-title {
+  margin-left: 8px;
+  font-size: .76rem;
+  color: var(--ink-faint);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+figure { margin: 0; }
+figcaption { margin-top: 12px; font-size: .88rem; color: var(--ink-faint); }
+
+/* --- stats ---------------------------------------------------- */
+.stats {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 64px;
+}
+@media (min-width: 620px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+
+.stat { background: var(--bg); padding: 24px 22px; }
+.stat b { display: block; font-size: 1.6rem; font-weight: 740; letter-spacing: -.02em; }
+.stat span { display: block; margin-top: 6px; font-size: .9rem; color: var(--ink-soft); }
+
+/* --- generic card grid ---------------------------------------- */
+.grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 680px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 760px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 680px) { .grid.cols-3 { grid-template-columns: repeat(2, 1fr); } }
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.card h3 { margin-bottom: 9px; }
+.card p { color: var(--ink-soft); font-size: .97rem; }
+
+.icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--brand-tint);
+  color: var(--brand-strong);
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+}
+
+/* --- feature rows --------------------------------------------- */
+.feature { display: grid; gap: 36px; align-items: center; grid-template-columns: 1fr; }
+.feature + .feature { margin-top: 88px; }
+@media (min-width: 940px) {
+  .feature { grid-template-columns: 0.85fr 1.15fr; gap: 56px; }
+  /* Reordering alone is not enough: the tracks keep their widths, so the
+     media would land in the narrow column. Swap the track sizes too. */
+  .feature.flip { grid-template-columns: 1.15fr 0.85fr; }
+  .feature.flip .feature-text { order: 2; }
+  .feature.flip .feature-media { order: 1; }
+}
+
+.feature-text h3 {
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+  letter-spacing: -.02em;
+  margin-bottom: 14px;
+}
+.feature-text p { color: var(--ink-soft); }
+.feature-text ul { margin: 18px 0 0; padding: 0; list-style: none; }
+.feature-text li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 9px;
+  font-size: .96rem;
+  color: var(--ink-soft);
+}
+.feature-text li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--brand);
+}
+
+.media-stack { display: grid; gap: 18px; }
+
+/* --- steps ---------------------------------------------------- */
+.steps { counter-reset: step; display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.step { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: .92rem;
+  margin-bottom: 16px;
+}
+.step h3 { margin-bottom: 8px; }
+.step p { color: var(--ink-soft); font-size: .96rem; }
+
+/* --- dark band ------------------------------------------------ */
+.band { background: var(--bg-deep); color: #e9f3f5; }
+.band h2, .band h3 { color: #fff; }
+.band p { color: #a9c3ca; }
+.band .eyebrow { color: #68cfdb; }
+.band .card { background: rgba(255, 255, 255, .045); border-color: rgba(255, 255, 255, .11); }
+.band .card p { color: #a9c3ca; }
+.band .icon { background: rgba(104, 207, 219, .16); color: #8fe0ea; }
+
+/* --- faq ------------------------------------------------------ */
+.faq { border-top: 1px solid var(--line); }
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 650;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: baseline;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--brand); font-weight: 700; font-size: 1.3rem; line-height: 1; }
+details[open] summary::after { content: "\2013"; }
+details p { margin-top: 12px; color: var(--ink-soft); max-width: 72ch; }
+
+/* --- contact -------------------------------------------------- */
+.contact-box {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.contact-box p { color: var(--ink-soft); margin: 14px auto 0; max-width: 54ch; }
+
+/* --- footer --------------------------------------------------- */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  font-size: .87rem;
+  color: var(--ink-faint);
+}
+footer .wrap { display: grid; gap: 14px; }
+@media (min-width: 760px) {
+  footer .wrap { grid-template-columns: 1fr auto; align-items: center; }
+}
+footer a { color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover { transform: none; }
+}
+
+/* --- narrow screens: keep the header on one line ---------------
+   The product name is long in both languages and pushed the
+   language switch and the call to action off-screen at 390px. */
+@media (max-width: 719px) {
+  .brand span { display: none; }
+  .nav { gap: 12px; }
+  .nav-actions { flex: none; }
+  h1 { max-width: none; }
+}
+
+body { overflow-x: hidden; }
+
+/* Some source screenshots end mid-content because the viewport did, which
+   reads as a rendering fault. A fade at the bottom edge makes it read as
+   "this continues below" instead. */
+.shot.tall img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+}
+
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+
+/* --- legal pages ---------------------------------------------- */
+.legal { max-width: 760px; }
+.legal h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 28px; }
+.legal h2 { font-size: 1.25rem; margin: 38px 0 12px; }
+.legal p, .legal li { color: var(--ink-soft); }
+.legal p + p { margin-top: 12px; }
+.legal address { font-style: normal; white-space: pre-line; }
+.legal ul { padding-left: 22px; }
+.legal li { margin-bottom: 8px; }
+
+/* Marks every value still to be supplied. Delete this rule once the
+   placeholders below are gone and it will be obvious if any remain. */
+.todo {
+  background: #fff3cd;
+  color: #7a4e00;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+:root[data-theme="dark"] .todo { background: #4a3708; color: #ffd98a; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .todo { background: #4a3708; color: #ffd98a; }
+}
+
+.notice {
+  border: 1px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 36px;
+}
+.notice p { color: var(--ink); font-size: .95rem; }

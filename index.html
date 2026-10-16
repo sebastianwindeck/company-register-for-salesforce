@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company Register for Salesforce</title>
+<meta name="description" content="Salesforce add-on, powered by North Data: link every Account to its commercial register entry and keep register profile, address and financial indicators current.">
+<!-- Keep the page out of search results until the Impressum is complete.
+     Delete this line to let it be indexed. -->
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Company Register for Salesforce">
+<meta property="og:description" content="Handelsregister-Daten direkt am Account — powered by North Data.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d6e7a'/><path d='M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z' fill='white'/></svg>">
+<script>
+  /* Pick the language before first paint so the page never flashes the wrong one. */
+  (function () {
+    var lang = 'de';
+    try {
+      var saved = localStorage.getItem('nd-lang');
+      if (saved === 'de' || saved === 'en') lang = saved;
+      else if (!/^de/i.test(navigator.language || '')) lang = 'en';
+    } catch (e) { /* private mode, blocked storage — keep the default */ }
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+  })();
+</script>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="#0d6e7a"/>
+        <path d="M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z" fill="#fff"/>
+      </svg>
+      <span data-lang="de">Handelsregister für Salesforce</span>
+      <span data-lang="en">Company Register for Salesforce</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#features"><span data-lang="de">Funktionen</span><span data-lang="en">Features</span></a>
+      <a href="#how"><span data-lang="de">Einrichtung</span><span data-lang="en">Setup</span></a>
+      <a href="#security"><span data-lang="de">Sicherheit</span><span data-lang="en">Security</span></a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#contact">
+        <span data-lang="de">Demo</span><span data-lang="en">Book a demo</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="badge">powered by North Data</span>
+      <span class="badge neutral">
+        <span data-lang="de">Salesforce Add-on · Managed Package</span>
+        <span data-lang="en">Salesforce add-on · Managed package</span>
+      </span>
+    </div>
+
+    <h1>
+      <span data-lang="de">Handelsregister&shy;daten, direkt am Account.</span>
+      <span data-lang="en">Register data, right on the Account.</span>
+    </h1>
+
+    <p class="lead">
+      <span data-lang="de">Verknüpfen Sie jeden Account mit seinem echten Eintrag im Handelsregister — Rechtsform, Registernummer, Anschrift, Unternehmensgegenstand und sämtliche veröffentlichten Bilanzkennzahlen. Auf der Account-Seite, die Ihr Team ohnehin geöffnet hat, und automatisch aktuell gehalten.</span>
+      <span data-lang="en">Link every Account to its real entry in the commercial register — legal form, registration number, address, corporate purpose and every published financial indicator. On the Account page your team already has open, and kept current automatically.</span>
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">
+        <span data-lang="de">Demo vereinbaren</span><span data-lang="en">Book a demo</span>
+      </a>
+      <a class="btn btn-ghost" href="#features">
+        <span data-lang="de">Funktionen ansehen</span><span data-lang="en">See how it works</span>
+      </a>
+    </div>
+
+    <p class="hero-note">
+      <span data-lang="de">Ihre Nutzer brauchen kein eigenes North-Data-Konto — der Zugang läuft über Ihr Abonnement.</span>
+      <span data-lang="en">Your users need no North Data account of their own — access runs through your subscription.</span>
+    </p>
+
+    <div class="hero-shot">
+      <div class="shot big">
+        <div class="shot-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="shot-title">Salesforce · Account · North Data</span>
+        </div>
+        <img src="img/01-account-linked.png" width="3200" height="2200"
+             alt="Salesforce Account-Seite der Beiersdorf AG mit dem North-Data-Panel: Rechtsform AG, HRB 1787 Hamburg, Anschrift, LEI, 22.399 Mitarbeiter, 9,85 Mrd. Euro Umsatz und vier Kennzahlenverläufe.">
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <b><span data-lang="de">Alle</span><span data-lang="en">Every</span></b>
+        <span data-lang="de">veröffentlichten Kennzahlen werden gespeichert, nicht nur die Headline-Werte</span>
+        <span data-lang="en">published indicator is stored in your org, not just the headline figures</span>
+      </div>
+      <div class="stat">
+        <b><span data-lang="de">Ein Klick</span><span data-lang="en">One click</span></b>
+        <span data-lang="de">vom Suchtreffer zum verknüpften Account</span>
+        <span data-lang="en">from a search result to a linked Account</span>
+      </div>
+      <div class="stat">
+        <b><span data-lang="de">Nächtlich</span><span data-lang="en">Nightly</span></b>
+        <span data-lang="de">automatischer Abgleich aller veralteten Datensätze</span>
+        <span data-lang="en">automatic refresh of every record that has gone stale</span>
+      </div>
+      <div class="stat">
+        <b>0</b>
+        <span data-lang="de">zusätzliche Logins, Tabs oder Copy-&amp;-Paste-Schritte</span>
+        <span data-lang="en">extra logins, tabs or copy-and-paste steps</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROBLEM ============================ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Das Problem</span><span data-lang="en">The problem</span></p>
+      <h2>
+        <span data-lang="de">Firmendaten gehören ins CRM — nicht in einen zweiten Browser-Tab</span>
+        <span data-lang="en">Company data belongs in the CRM — not in a second browser tab</span>
+      </h2>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3><span data-lang="de">Recherche kostet Zeit</span><span data-lang="en">Research costs time</span></h3>
+        <p>
+          <span data-lang="de">Vertrieb und Backoffice suchen Registernummer, Rechtsform und Umsatz im Browser und tippen sie von Hand ab — bei jedem neuen Account aufs Neue.</span>
+          <span data-lang="en">Sales and back office look up registration numbers, legal form and revenue in a browser and retype them by hand — for every new Account, again and again.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v5h5"/></svg>
+        </div>
+        <h3><span data-lang="de">Daten veralten still</span><span data-lang="en">Data goes stale quietly</span></h3>
+        <p>
+          <span data-lang="de">Firmierung, Sitz und Rechtsform ändern sich, Gesellschaften gehen in Liquidation. Der CRM-Datensatz bleibt, wie er am Tag der Anlage war.</span>
+          <span data-lang="en">Names, registered offices and legal forms change, companies go into liquidation. The CRM record stays exactly as it was the day it was created.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </div>
+        <h3><span data-lang="de">Zahlen fehlen im Bericht</span><span data-lang="en">Figures are missing from reports</span></h3>
+        <p>
+          <span data-lang="de">Umsatz und Mitarbeiterzahl stehen in PDFs und auf fremden Websites. Segmentierung, Priorisierung und Forecast arbeiten deshalb mit Schätzungen.</span>
+          <span data-lang="en">Revenue and headcount live in PDFs and on other people's websites. Segmentation, prioritisation and forecasting run on guesswork instead.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FEATURES ============================ -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Funktionen</span><span data-lang="en">Features</span></p>
+      <h2>
+        <span data-lang="de">Vom Firmennamen zum vollständigen Registerprofil</span>
+        <span data-lang="en">From a company name to a complete register profile</span>
+      </h2>
+      <p>
+        <span data-lang="de">Alle Abbildungen stammen aus einer laufenden Salesforce-Org mit installiertem Paket.</span>
+        <span data-lang="en">Every screenshot below comes from a running Salesforce org with the package installed.</span>
+      </p>
+    </div>
+
+    <!-- F1 -->
+    <div class="feature">
+      <div class="feature-text">
+        <h3><span data-lang="de">Suchen, prüfen, verknüpfen</span><span data-lang="en">Search, check, link</span></h3>
+        <p>
+          <span data-lang="de">Die Suche sitzt direkt im Account. Firmenname eintippen, optional nach Land filtern, Treffer mit Register, Sitz und früheren Firmierungen vergleichen — und mit einem Klick verknüpfen.</span>
+          <span data-lang="en">The search sits on the Account itself. Type a company name, filter by country if you need to, compare matches by register, registered office and former names — and link one with a single click.</span>
+        </p>
+        <ul>
+          <li><span data-lang="de">Treffer sind nach Übereinstimmung sortiert, frühere Firmierungen werden mit ausgewiesen</span><span data-lang="en">Matches are ranked, and former company names are shown alongside</span></li>
+          <li><span data-lang="de">Eigene Konsole für die Massenarbeit: alle noch nicht verknüpften Accounts als Arbeitsliste</span><span data-lang="en">A dedicated console for bulk work: every Account not yet linked, as a work list</span></li>
+          <li><span data-lang="de">Verknüpft wird auf den stabilen Registerschlüssel, nicht auf einen flüchtigen Datensatz-Identifier</span><span data-lang="en">Linking is on the stable register key, never on a volatile record identifier</span></li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <div class="media-stack">
+          <figure>
+            <div class="shot">
+              <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">Körber AG · noch nicht verknüpft</span></div>
+              <img src="img/03-account-unlinked.png" loading="lazy" width="3200" height="1925"
+                   alt="Account-Seite der Körber AG mit dem North-Data-Suchfeld, vorbelegt mit dem Accountnamen.">
+            </div>
+            <figcaption>
+              <span data-lang="de">Das Suchfeld ist mit dem Accountnamen vorbelegt.</span>
+              <span data-lang="en">The search box arrives pre-filled with the Account name.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="shot">
+              <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">North Data Search</span></div>
+              <img src="img/04-search-console.png" loading="lazy" width="3200" height="2200"
+                   alt="Suchkonsole: links die noch nicht verknüpften Accounts, rechts acht Treffer zu „Körber AG“ mit Register, Anschrift und Status aktiv oder erloschen.">
+            </div>
+            <figcaption>
+              <span data-lang="de">Eine echte Suche: links die offene Arbeitsliste, rechts die Treffer aus dem Register, erloschene Gesellschaften inbegriffen.</span>
+              <span data-lang="en">A real search: the open work list on the left, register hits on the right, dissolved companies included.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="feature flip">
+      <div class="feature-text">
+        <h3><span data-lang="de">Das Registerprofil, wo es gebraucht wird</span><span data-lang="en">The register profile, where it is needed</span></h3>
+        <p>
+          <span data-lang="de">Rechtsform, Registergericht und Registernummer, Status, vollständige Anschrift, Unternehmensgegenstand, LEI und ELF-Code — als Panel neben den Account-Feldern. Darunter die Verläufe der letzten Geschäftsjahre und eine Vergleichstabelle. Ein Link führt auf das vollständige Profil bei North Data.</span>
+          <span data-lang="en">Legal form, register court and number, status, full address, corporate purpose, LEI and ELF code — as a panel next to the Account fields. Below it, trends across recent financial years and a period comparison table. A link opens the full profile on North Data.</span>
+        </p>
+        <ul>
+          <li><span data-lang="de">Status wie <em>Active</em> oder <em>Liquidation</em> als Abzeichen in der Überschrift</span><span data-lang="en">Status such as <em>Active</em> or <em>Liquidation</em> as a badge in the header</span></li>
+          <li><span data-lang="de">Als Lightning-Komponente frei auf der Account-Seite platzierbar</span><span data-lang="en">A Lightning component you can place anywhere on the Account page</span></li>
+          <li><span data-lang="de">Geschätzte Werte sind als solche gekennzeichnet</span><span data-lang="en">Estimated figures are marked as estimates</span></li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <figure>
+          <div class="shot tall">
+            <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">Beiersdorf AG · verknüpft</span></div>
+            <img src="img/07-account-narrow.png" loading="lazy" width="2560" height="3120"
+                 alt="Das North-Data-Panel der Beiersdorf AG mit Registerprofil und den Verläufen für Umsatz, Mitarbeiterzahl, Eigenkapital und Jahresüberschuss von 2019 bis 2025.">
+          </div>
+          <figcaption>
+            <span data-lang="de">Registerprofil und Verläufe für Umsatz, Mitarbeiter, Eigenkapital und Jahresüberschuss.</span>
+            <span data-lang="en">Register profile plus trends for revenue, headcount, equity and earnings.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- F3 -->
+    <div class="feature">
+      <div class="feature-text">
+        <h3><span data-lang="de">Alle Kennzahlen — gespeichert, nicht nur angezeigt</span><span data-lang="en">All indicators — stored, not just displayed</span></h3>
+        <p>
+          <span data-lang="de">Jede Kennzahl jedes Geschäftsjahres wird als eigener Datensatz in Ihrer Org abgelegt. Bei einem Konzern sind das mehrere hundert Werte über mehr als zehn Geschäftsjahre. Umsatz, Mitarbeiterzahl und Eigenkapital des jüngsten Jahres stehen zusätzlich direkt auf dem Firmendatensatz — damit funktionieren Listenansichten, Filter, Berichte und Flows ohne Umweg über eine Verknüpfung.</span>
+          <span data-lang="en">Every indicator of every financial year is stored as its own record in your org. For a large group that means several hundred figures across more than ten financial years. Revenue, headcount and equity for the most recent year are also written onto the company record itself, so list views, filters, reports and flows work without joining a child object.</span>
+        </p>
+        <ul>
+          <li><span data-lang="de">Ein eigenes Firmenobjekt, das mehrere Accounts gemeinsam referenzieren können</span><span data-lang="en">A dedicated company object that several Accounts can reference at once</span></li>
+          <li><span data-lang="de">Restatements werden sauber übernommen: zurückgezogene Kennzahlen verschwinden auch</span><span data-lang="en">Restatements are handled cleanly: withdrawn indicators disappear as well</span></li>
+          <li><span data-lang="de">Konsolidierte und nicht konsolidierte Abschlüsse bleiben unterscheidbar</span><span data-lang="en">Consolidated and unconsolidated filings stay distinguishable</span></li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <figure>
+          <div class="shot tall">
+            <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">Beiersdorf AG · Firmendatensatz</span></div>
+            <img src="img/06-company-record.png" loading="lazy" width="3200" height="2200"
+                 alt="Firmendatensatz der Beiersdorf AG mit Register-, Identifikations- und Adressfeldern sowie der Liste der gespeicherten Kennzahlen.">
+          </div>
+          <figcaption>
+            <span data-lang="de">Der Firmendatensatz mit Registerdaten, Identifikatoren und der vollständigen Kennzahlenliste.</span>
+            <span data-lang="en">The company record with register data, identifiers and the full list of indicators.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- F4 -->
+    <div class="feature flip">
+      <div class="feature-text">
+        <h3><span data-lang="de">Automatisch aktuell</span><span data-lang="en">Current, automatically</span></h3>
+        <p>
+          <span data-lang="de">Ein nächtlicher Lauf holt alle Datensätze nach, die älter sind als die von Ihnen gesetzte Frist. Veraltete Einträge sind im Panel sichtbar markiert, und ein Klick auf <em>Refresh</em> aktualisiert sofort. Beendete Gesellschaften werden übersprungen — ihr Registereintrag ist endgültig, ein erneuter Abruf verbraucht nur Kontingent.</span>
+          <span data-lang="en">A nightly run picks up every record older than the interval you set. Stale entries are visibly flagged in the panel, and one click on <em>Refresh</em> updates immediately. Terminated companies are skipped — their register entry is final, so re-fetching one only spends quota.</span>
+        </p>
+        <ul>
+          <li><span data-lang="de">Frist, Umfang und Anzahl je Lauf sind pro Org einstellbar</span><span data-lang="en">Interval, scope and records per run are configurable per org</span></li>
+          <li><span data-lang="de">Jeder Lauf wird protokolliert: verarbeitet, aktualisiert, fehlgeschlagen</span><span data-lang="en">Every run is logged: processed, updated, failed</span></li>
+        </ul>
+      </div>
+      <div class="feature-media">
+        <figure>
+          <div class="shot">
+            <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">Hapag-Lloyd AG · due for refresh</span></div>
+            <img src="img/02-account-stale.png" loading="lazy" width="3200" height="2200"
+                 alt="Account der Hapag-Lloyd AG mit dem Hinweis „Synced 97 days ago · due for refresh“ neben dem Synchronisationsdatum.">
+          </div>
+          <figcaption>
+            <span data-lang="de">„Synced 97 days ago · due for refresh" — der Datensatz ist zum Abgleich vorgemerkt.</span>
+            <span data-lang="en">“Synced 97 days ago · due for refresh” — the record is queued for the next run.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ADMIN / OPERATIONS ============================ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Betrieb</span><span data-lang="en">Operations</span></p>
+      <h2>
+        <span data-lang="de">Für Administratoren nachvollziehbar</span>
+        <span data-lang="en">Accountable for administrators</span>
+      </h2>
+      <p>
+        <span data-lang="de">Eine eigene Admin-Konsole zeigt, was das Paket tut und was es verbraucht.</span>
+        <span data-lang="en">A dedicated admin console shows what the package does and what it consumes.</span>
+      </p>
+    </div>
+
+    <figure style="margin-bottom:44px">
+      <div class="shot">
+        <div class="shot-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-title">North Data Admin</span></div>
+        <img src="img/05-admin-console.png" loading="lazy" width="3200" height="2017"
+             alt="Admin-Konsole: Abonnement aktiv, Tarif Professional, 20 von 1.000 Abrufen verbraucht, Verbrauchsverlauf, vier Unternehmen und drei verknüpfte Accounts, Einstellungen und die letzten Synchronisationsläufe.">
+      </div>
+      <figcaption>
+        <span data-lang="de">Abonnement, Kontingent, Bestand, Einstellungen und die letzten Läufe auf einer Seite.</span>
+        <span data-lang="en">Subscription, quota, holdings, settings and recent runs on a single page.</span>
+      </figcaption>
+    </figure>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <h3><span data-lang="de">Abonnement und Kontingent</span><span data-lang="en">Subscription and quota</span></h3>
+        <p><span data-lang="de">Status, Tarif, Laufzeit und verbrauchte Abrufe der laufenden Periode auf einen Blick.</span><span data-lang="en">Status, plan, term and requests consumed in the current period, at a glance.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-lang="de">Protokoll jedes Laufs</span><span data-lang="en">A log of every run</span></h3>
+        <p><span data-lang="de">Start, Auslöser, Ergebnis und Zahlen je Synchronisationslauf — geplant wie manuell.</span><span data-lang="en">Start, trigger, outcome and counts for each sync run — scheduled and manual alike.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-lang="de">Zwei Berechtigungssätze</span><span data-lang="en">Two permission sets</span></h3>
+        <p><span data-lang="de">Nutzer dürfen suchen, verknüpfen und lesen. Administratoren zusätzlich steuern und konfigurieren.</span><span data-lang="en">Users may search, link and read. Administrators may also control and configure.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-lang="de">Einstellungen je Org</span><span data-lang="en">Per-org settings</span></h3>
+        <p><span data-lang="de">Aktualisierungsfrist, Datensätze je Lauf, Standardland, Sprache und ob Kennzahlen mitgeladen werden.</span><span data-lang="en">Refresh interval, records per run, default country, language, and whether financials are fetched.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-lang="de">Lauf auf Knopfdruck</span><span data-lang="en">Run on demand</span></h3>
+        <p><span data-lang="de">Veraltete Unternehmen lassen sich jederzeit sofort abgleichen, ohne auf die Nacht zu warten.</span><span data-lang="en">Stale companies can be refreshed at any time, without waiting for the nightly run.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-lang="de">Verbindungstest</span><span data-lang="en">Connection test</span></h3>
+        <p><span data-lang="de">Ein Klick prüft Schlüssel, Lizenz und Erreichbarkeit — mit einer verständlichen Fehlermeldung statt eines Statuscodes.</span><span data-lang="en">One click checks key, licence and reachability — with a readable message rather than a status code.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Einrichtung</span><span data-lang="en">Setup</span></p>
+      <h2><span data-lang="de">In drei Schritten startklar</span><span data-lang="en">Ready in three steps</span></h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h3><span data-lang="de">Paket installieren</span><span data-lang="en">Install the package</span></h3>
+        <p><span data-lang="de">Managed Package installieren, einen der beiden Berechtigungssätze zuweisen und die Komponente auf die Account-Seite ziehen. Standardeinstellungen und der nächtliche Lauf werden dabei automatisch angelegt.</span><span data-lang="en">Install the managed package, assign one of the two permission sets and drop the component onto the Account page. Default settings and the nightly run are created for you.</span></p>
+      </div>
+      <div class="step">
+        <h3><span data-lang="de">Schlüssel hinterlegen</span><span data-lang="en">Add your key</span></h3>
+        <p><span data-lang="de">Ihren Abonnementschlüssel in den Named Credentials eintragen und die Verbindung testen. Salesforce speichert ihn verschlüsselt; er steht nie im Paketquellcode.</span><span data-lang="en">Enter your subscription key in Named Credentials and test the connection. Salesforce stores it encrypted; it never appears in package source.</span></p>
+      </div>
+      <div class="step">
+        <h3><span data-lang="de">Accounts verknüpfen</span><span data-lang="en">Link your Accounts</span></h3>
+        <p><span data-lang="de">Über die Konsole die offenen Accounts abarbeiten. Ab dann hält der nächtliche Abgleich die Daten ohne weiteres Zutun aktuell.</span><span data-lang="en">Work through the open Accounts in the console. From then on the nightly refresh keeps everything current on its own.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SECURITY ============================ -->
+<section id="security" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Sicherheit und Daten</span><span data-lang="en">Security and data</span></p>
+      <h2><span data-lang="de">Ihre Daten bleiben in Ihrer Org</span><span data-lang="en">Your data stays in your org</span></h2>
+      <p>
+        <span data-lang="de">Das Paket ist von Anfang an für die Salesforce-Sicherheitsprüfung gebaut worden.</span>
+        <span data-lang="en">The package has been built for the Salesforce security review from the start.</span>
+      </p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6z"/></svg>
+        </div>
+        <h3><span data-lang="de">Schlüssel verschlüsselt</span><span data-lang="en">Keys stay encrypted</span></h3>
+        <p><span data-lang="de">Zugangsdaten liegen in den Named Credentials von Salesforce, nicht in Metadaten, nicht im Quellcode und nicht in Logs.</span><span data-lang="en">Credentials live in Salesforce Named Credentials — not in metadata, not in source, not in logs.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"/><rect x="4" y="11" width="16" height="9" rx="2"/></svg>
+        </div>
+        <h3><span data-lang="de">Berechtigungen gelten</span><span data-lang="en">Permissions are enforced</span></h3>
+        <p><span data-lang="de">Jeder Zugriff, den ein Mensch auslöst, läuft mit dessen eigenen Objekt- und Feldrechten. Niemand sieht durch das Paket mehr als sonst.</span><span data-lang="en">Everything a person triggers runs with their own object and field permissions. Nobody sees more through the package than they otherwise would.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h10"/></svg>
+        </div>
+        <h3><span data-lang="de">Minimaler Eingriff</span><span data-lang="en">A minimal footprint</span></h3>
+        <p><span data-lang="de">An Ihren Standardobjekten ändert sich nichts außer einem zusätzlichen Nachschlagefeld am Account. Freigabemodell und Seitenlayouts bleiben unberührt.</span><span data-lang="en">Nothing changes on your standard objects except one extra lookup field on Account. Your sharing model and page layouts are left alone.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <h3><span data-lang="de">Daten bleiben bei Ihnen</span><span data-lang="en">The data is yours</span></h3>
+        <p><span data-lang="de">Abgerufene Registerdaten und Kennzahlen werden in Ihrer eigenen Org gespeichert und sind dort ganz normal berichts- und exportierbar.</span><span data-lang="en">Register data and indicators you fetch are stored in your own org, where they report and export like any other record.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3><span data-lang="de">Keine Nutzerkonten bei North Data</span><span data-lang="en">No North Data accounts per user</span></h3>
+        <p><span data-lang="de">Der Zugang läuft über ein einziges Abonnement Ihrer Organisation. Ihre Nutzer legen keine eigenen Konten an.</span><span data-lang="en">Access runs through a single subscription for your organisation. Your users create no accounts of their own.</span></p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3><span data-lang="de">Nachvollziehbarer Verbrauch</span><span data-lang="en">Traceable consumption</span></h3>
+        <p><span data-lang="de">Jeder Abruf wird gezählt und ist in der Admin-Konsole einsehbar — keine Überraschung am Monatsende.</span><span data-lang="en">Every request is counted and visible in the admin console — no surprises at the end of the month.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DATA SOURCE ============================ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span data-lang="de">Datenquelle</span><span data-lang="en">Data source</span></p>
+      <h2><span data-lang="de">Powered by North Data</span><span data-lang="en">Powered by North Data</span></h2>
+      <p>
+        <span data-lang="de">North Data erschließt Handels- und Unternehmensregister sowie veröffentlichte Jahresabschlüsse und macht sie maschinell auswertbar. Dieses Add-on bringt genau diese Daten in Salesforce — ohne dass Sie eine Zeile Integration bauen müssen. Welche Länder und welche Kennzahlen abgedeckt sind, hängt vom Register ab; die jeweils aktuelle Übersicht führt North Data selbst.</span>
+        <span data-lang="en">North Data opens up commercial and company registers along with published annual accounts, and makes them machine-readable. This add-on brings exactly that data into Salesforce, with no integration work on your side. Which countries and which indicators are covered depends on the register; North Data maintains the current overview.</span>
+      </p>
+    </div>
+    <a class="btn btn-ghost" href="https://www.northdata.de" target="_blank" rel="noopener">
+      <span data-lang="de">Abdeckung bei North Data ansehen</span>
+      <span data-lang="en">See coverage on North Data</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2><span data-lang="de">Häufige Fragen</span><span data-lang="en">Common questions</span></h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary><span data-lang="de">Brauchen unsere Nutzer ein eigenes North-Data-Konto?</span><span data-lang="en">Do our users need their own North Data account?</span></summary>
+        <p><span data-lang="de">Nein. Ihre Organisation hat ein Abonnement, der Schlüssel wird einmal zentral hinterlegt. Für Ihre Nutzer gibt es kein zusätzliches Login und keinen zweiten Tab.</span><span data-lang="en">No. Your organisation holds one subscription and the key is entered centrally, once. For your users there is no extra login and no second tab.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Was passiert mit den Daten, wenn wir kündigen?</span><span data-lang="en">What happens to the data if we cancel?</span></summary>
+        <p><span data-lang="de">Was bereits abgerufen wurde, liegt in Ihrer Org und bleibt dort. Es entfallen nur neue Abrufe und der automatische Abgleich.</span><span data-lang="en">Whatever has already been fetched sits in your org and stays there. Only new requests and the automatic refresh stop.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Funktioniert das auch außerhalb Deutschlands?</span><span data-lang="en">Does this work outside Germany?</span></summary>
+        <p><span data-lang="de">Ja. Die Suche kennt einen Länderfilter, und das Paket speichert Registerland, LEI und ELF-Code mit ab. Welche Register und Kennzahlen zur Verfügung stehen, richtet sich nach der Abdeckung von North Data.</span><span data-lang="en">Yes. Search has a country filter, and the package stores register country, LEI and ELF code. Which registers and indicators are available depends on North Data's coverage.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Verändert das Paket unsere Standardobjekte?</span><span data-lang="en">Does the package change our standard objects?</span></summary>
+        <p><span data-lang="de">Es kommt ein Nachschlagefeld am Account hinzu, das auf den Firmendatensatz zeigt. Mehr nicht — Freigabemodell, Layouts und bestehende Felder bleiben unverändert.</span><span data-lang="en">One lookup field is added to Account, pointing at the company record. Nothing else — sharing model, layouts and existing fields are untouched.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Wie viele Abrufe verbraucht die tägliche Arbeit?</span><span data-lang="en">How many requests does day-to-day use consume?</span></summary>
+        <p><span data-lang="de">Eine Suche zählt als ein Abruf, das Verknüpfen oder Aktualisieren eines Unternehmens ebenfalls. Der nächtliche Lauf verbraucht einen Abruf je veraltetem Unternehmen und ist nach oben begrenzt. Status- und Kontingentabfragen zählen nicht mit.</span><span data-lang="en">A search counts as one request, and so does linking or refreshing a company. The nightly run spends one request per stale company and is capped. Status and quota lookups are not counted.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Bekommen wir wirklich alle Kennzahlen?</span><span data-lang="en">Do we really get every indicator?</span></summary>
+        <p><span data-lang="de">Ja. Es wird nicht auf eine Auswahl reduziert: Jede Kennzahl jedes verfügbaren Geschäftsjahres wird gespeichert und bleibt in Salesforce auswertbar. Die Diagramme zeigen die vier gängigsten, die Tabelle und das Datenmodell enthalten alle.</span><span data-lang="en">Yes. Nothing is reduced to a selection: every indicator of every available financial year is stored and remains reportable in Salesforce. The charts show the four most common ones; the table and the data model hold them all.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2><span data-lang="de">Sehen Sie es an Ihren eigenen Accounts</span><span data-lang="en">See it on your own Accounts</span></h2>
+      <p>
+        <span data-lang="de">Wir zeigen das Add-on in einer Live-Org mit echten Registerdaten — rund 30 Minuten, ohne Folien.</span>
+        <span data-lang="en">We will show the add-on in a live org with real register data — about 30 minutes, no slides.</span>
+      </p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-primary" href="mailto:info@quick-id.com?subject=Handelsregister%20f%C3%BCr%20Salesforce%20%E2%80%93%20Demo">
+          <span data-lang="de">Demo anfragen</span><span data-lang="en">Request a demo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span data-lang="de">© <span class="year">2026</span> CTW Data Solutions. Salesforce und AppExchange sind Marken von Salesforce, Inc. North Data ist eine Marke der North Data GmbH; dieses Add-on nutzt die North Data API mit deren Zustimmung.</span>
+      <span data-lang="en">© <span class="year">2026</span> CTW Data Solutions. Salesforce and AppExchange are trademarks of Salesforce, Inc. North Data is a trademark of North Data GmbH; this add-on uses the North Data API with their consent.</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a>
+      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <a href="https://www.northdata.de" target="_blank" rel="noopener">North Data</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
