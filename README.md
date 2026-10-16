@@ -28,8 +28,14 @@ Pages ausgeliefert (*Settings → Pages → Branch `main`, Ordner `/ (root)`*). 
 Produktrepository bleibt privat, damit Backend, Terraform und interne
 Dokumentation nicht mitveröffentlicht werden.
 
-Dieser Ordner ist die Quelle. Nach Änderungen hier den Inhalt in das
-Seiten-Repository übernehmen und pushen.
+Dieser Ordner ist die Quelle. Änderungen hier, dann veröffentlichen mit:
+
+```bash
+./site/publish.sh "Impressum ergänzt"
+```
+
+- Seite: <https://sebastianwindeck.github.io/company-register-for-salesforce/>
+- Repository: <https://github.com/sebastianwindeck/company-register-for-salesforce>
 
 Eine eigene Domain wird unter *Settings → Pages → Custom domain* eingetragen,
 dazu ein CNAME auf `<benutzer>.github.io`.
