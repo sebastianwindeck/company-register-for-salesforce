@@ -40,12 +40,9 @@ Dieser Ordner ist die Quelle. Änderungen hier, dann veröffentlichen mit:
 Eine eigene Domain wird unter *Settings → Pages → Custom domain* eingetragen,
 dazu ein CNAME auf `<benutzer>.github.io`.
 
-## Noch offen
+## Stand
 
-- **Impressum vervollständigen.** Die gelb markierten Felder in
-  `impressum.html` sind Platzhalter; solange sie stehen, ist die Seite in
-  Deutschland abmahnfähig. Die Warnbox oben auf der Seite entfernen, sobald
-  alle ersetzt sind.
-- **`noindex` entfernen.** `index.html` trägt bis dahin ein
-  `<meta name="robots" content="noindex">`, damit die Seite nicht indexiert wird.
-- **Telefonnummer und Registerangaben** ergänzen, falls vorhanden.
+Impressum und Datenschutzerklärung sind vollständig, die Seite ist für
+Suchmaschinen freigegeben. Ändert sich die Firmierung, sind
+`impressum.html`, `datenschutz.html` und die Fußzeile von `index.html`
+anzupassen.

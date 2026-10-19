@@ -1,137 +1,141 @@
 <!doctype html>
 <html lang="de" data-lang="de">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impressum</title>
-<meta name="description" content="Impressum und Anbieterkennzeichnung.">
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d6e7a'/><path d='M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z' fill='white'/></svg>">
-<script>
-  (function () {
-    var lang = 'de';
-    try {
-      var saved = localStorage.getItem('nd-lang');
-      if (saved === 'de' || saved === 'en') lang = saved;
-      else if (!/^de/i.test(navigator.language || '')) lang = 'en';
-    } catch (e) { /* blocked storage — keep the default */ }
-    document.documentElement.setAttribute('data-lang', lang);
-    document.documentElement.setAttribute('lang', lang);
-  })();
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum</title>
+  <meta name="description" content="Impressum und Anbieterkennzeichnung.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d6e7a'/><path d='M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z' fill='white'/></svg>">
+  <script>
+    (function () {
+      var lang = 'de';
+      try {
+        var saved = localStorage.getItem('nd-lang');
+        if (saved === 'de' || saved === 'en') lang = saved;
+        else if (!/^de/i.test(navigator.language || '')) lang = 'en';
+      } catch (e) { /* blocked storage — keep the default */ }
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+    })();
+  </script>
 </head>
+
 <body>
 
-<header>
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="7" fill="#0d6e7a"/>
-        <path d="M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z" fill="#fff"/>
-      </svg>
-      <span data-lang="de">Handelsregister für Salesforce</span>
-      <span data-lang="en">Company Register for Salesforce</span>
-    </a>
-    <div class="nav-actions">
-      <div class="lang" role="group" aria-label="Sprache / Language">
-        <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#0d6e7a" />
+          <path d="M8 22V10h3.4l4.6 7.2V10h3.2v12h-3.3L11.2 15v7z" fill="#fff" />
+        </svg>
+        <span data-lang="de">Handelsregister für Salesforce</span>
+        <span data-lang="en">Company Register for Salesforce</span>
+      </a>
+      <div class="nav-actions">
+        <div class="lang" role="group" aria-label="Sprache / Language">
+          <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap legal">
+        <h1><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></h1>
+
+        <p>
+          <span data-lang="de">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG).</span>
+          <span data-lang="en">Information pursuant to section 5 of the German Digital Services Act (DDG).</span>
+        </p>
+
+        <h2><span data-lang="de">Diensteanbieter</span><span data-lang="en">Service provider</span></h2>
+        <address>
+          <span>CTW Data Solutions GmbH</span>
+          <span>Rietzer Berg 29</span>
+          <span>14797 Kloster Lehnin</span>
+          <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span>
+        </address>
+
+        <h2><span data-lang="de">Vertreten durch</span><span data-lang="en">Represented by</span></h2>
+        <p>Sebastian Windeck</p>
+
+        <h2><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h2>
+        <p>
+          <span data-lang="de">E-Mail:</span><span data-lang="en">Email:</span>
+          <a href="mailto:info@quick-id.com">info@quick-id.com</a><br>
+          <span data-lang="de">Telefon:</span><span data-lang="en">Telephone:</span>
+          <span>+49 3381 52700</span>
+        </p>
+
+        <h2><span data-lang="de">Registereintrag</span><span data-lang="en">Register entry</span></h2>
+        <p>
+          <span data-lang="de">Registergericht:</span><span data-lang="en">Register court:</span>
+          <span>Amtsgericht Potsdam</span><br>
+          <span data-lang="de">Registernummer:</span><span data-lang="en">Registration number:</span>
+          <span>HRB 34177 P</span>
+        </p>
+
+        <h2><span data-lang="de">Umsatzsteuer-Identifikationsnummer</span><span data-lang="en">VAT identification
+            number</span></h2>
+        <p>
+          <span data-lang="de">Gemäß § 27a Umsatzsteuergesetz:</span>
+          <span data-lang="en">Pursuant to section 27a of the German VAT Act:</span>
+          <span>DE332624361</span>
+        </p>
+
+        <h2><span data-lang="de">Redaktionell verantwortlich</span><span data-lang="en">Responsible for content</span>
+        </h2>
+        <p>
+          <span data-lang="de">Gemäß § 18 Abs. 2 Medienstaatsvertrag: Sebastian Windeck, Anschrift wie oben.</span>
+          <span data-lang="en">Pursuant to section 18(2) of the German Interstate Media Treaty: Sebastian Windeck,
+            address as above.</span>
+        </p>
+
+        <h2><span data-lang="de">Streitbeilegung</span><span data-lang="en">Dispute resolution</span></h2>
+        <p>
+          <span data-lang="de">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.</span>
+          <span data-lang="en">We are neither willing nor obliged to take part in dispute resolution proceedings before
+            a consumer arbitration board.</span>
+        </p>
+
+        <h2><span data-lang="de">Marken</span><span data-lang="en">Trademarks</span></h2>
+        <p>
+          <span data-lang="de">Salesforce und AppExchange sind Marken von Salesforce, Inc. North Data ist eine Marke der
+            North Data GmbH; die hier beschriebene Integration nutzt die North Data API mit deren Zustimmung. Alle
+            weiteren genannten Firmen- und Produktnamen sind Marken ihrer jeweiligen Inhaber. Die auf dieser Seite
+            abgebildeten Unternehmensdaten stammen aus öffentlich zugänglichen Registern.</span>
+          <span data-lang="en">Salesforce and AppExchange are trademarks of Salesforce, Inc. North Data is a trademark
+            of North Data GmbH; the integration described here uses the North Data API with their consent. All other
+            company and product names are trademarks of their respective owners. The company data shown on this site
+            comes from publicly accessible registers.</span>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <span data-lang="de">© <span class="year">2026</span> CTW Data Solutions GmbH</span>
+        <span data-lang="en">© <span class="year">2026</span> CTW Data Solutions GmbH</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html"><span data-lang="de">Startseite</span><span data-lang="en">Home</span></a>
+        <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
       </div>
     </div>
-  </nav>
-</header>
+  </footer>
 
-<main>
-<section>
-  <div class="wrap legal">
-
-    <!-- ============================================================
-         Delete this box once every .todo below has been replaced.
-         ============================================================ -->
-    <div class="notice">
-      <p><strong>Noch nicht vollständig.</strong>
-        <span data-lang="de">Die gelb markierten Angaben müssen vor der Veröffentlichung ergänzt werden. Ein unvollständiges Impressum ist in Deutschland abmahnfähig.</span>
-        <span data-lang="en">The values highlighted in yellow must be supplied before this page is made public. An incomplete legal notice is actionable under German law.</span>
-      </p>
-    </div>
-
-    <h1><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></h1>
-
-    <p>
-      <span data-lang="de">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG).</span>
-      <span data-lang="en">Information pursuant to section 5 of the German Digital Services Act (DDG).</span>
-    </p>
-
-    <h2><span data-lang="de">Diensteanbieter</span><span data-lang="en">Service provider</span></h2>
-    <address>
-      <span class="todo">Vollständige Firmierung inkl. Rechtsform</span>
-      <span class="todo">Straße und Hausnummer</span>
-      <span class="todo">PLZ und Ort</span>
-      <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span>
-    </address>
-
-    <h2><span data-lang="de">Vertreten durch</span><span data-lang="en">Represented by</span></h2>
-    <p>Sebastian Windeck</p>
-
-    <h2><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h2>
-    <p>
-      <span data-lang="de">E-Mail:</span><span data-lang="en">Email:</span>
-      <a href="mailto:info@quick-id.com">info@quick-id.com</a><br>
-      <span data-lang="de">Telefon:</span><span data-lang="en">Telephone:</span>
-      <span class="todo">Telefonnummer</span>
-    </p>
-
-    <h2><span data-lang="de">Registereintrag</span><span data-lang="en">Register entry</span></h2>
-    <p>
-      <span data-lang="de">Registergericht:</span><span data-lang="en">Register court:</span>
-      <span class="todo">Amtsgericht</span><br>
-      <span data-lang="de">Registernummer:</span><span data-lang="en">Registration number:</span>
-      <span class="todo">HRB …</span>
-    </p>
-
-    <h2><span data-lang="de">Umsatzsteuer-Identifikationsnummer</span><span data-lang="en">VAT identification number</span></h2>
-    <p>
-      <span data-lang="de">Gemäß § 27a Umsatzsteuergesetz:</span>
-      <span data-lang="en">Pursuant to section 27a of the German VAT Act:</span>
-      <span class="todo">DE…</span>
-    </p>
-
-    <h2><span data-lang="de">Redaktionell verantwortlich</span><span data-lang="en">Responsible for content</span></h2>
-    <p>
-      <span data-lang="de">Gemäß § 18 Abs. 2 Medienstaatsvertrag: Sebastian Windeck, Anschrift wie oben.</span>
-      <span data-lang="en">Pursuant to section 18(2) of the German Interstate Media Treaty: Sebastian Windeck, address as above.</span>
-    </p>
-
-    <h2><span data-lang="de">Streitbeilegung</span><span data-lang="en">Dispute resolution</span></h2>
-    <p>
-      <span data-lang="de">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</span>
-      <span data-lang="en">We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.</span>
-    </p>
-
-    <h2><span data-lang="de">Marken</span><span data-lang="en">Trademarks</span></h2>
-    <p>
-      <span data-lang="de">Salesforce und AppExchange sind Marken von Salesforce, Inc. North Data ist eine Marke der North Data GmbH; die hier beschriebene Integration nutzt die North Data API mit deren Zustimmung. Alle weiteren genannten Firmen- und Produktnamen sind Marken ihrer jeweiligen Inhaber. Die auf dieser Seite abgebildeten Unternehmensdaten stammen aus öffentlich zugänglichen Registern.</span>
-      <span data-lang="en">Salesforce and AppExchange are trademarks of Salesforce, Inc. North Data is a trademark of North Data GmbH; the integration described here uses the North Data API with their consent. All other company and product names are trademarks of their respective owners. The company data shown on this site comes from publicly accessible registers.</span>
-    </p>
-
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <span data-lang="de">© <span class="year">2026</span> CTW Data Solutions</span>
-      <span data-lang="en">© <span class="year">2026</span> CTW Data Solutions</span>
-    </div>
-    <div class="footer-links">
-      <a href="index.html"><span data-lang="de">Startseite</span><span data-lang="en">Home</span></a>
-      <a href="datenschutz.html"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
-    </div>
-  </div>
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
