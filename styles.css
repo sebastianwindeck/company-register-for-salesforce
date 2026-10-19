@@ -3,54 +3,68 @@
    Self-contained: no external fonts, no CDN, no build step.
    --------------------------------------------------------------- */
 
+/* Richtung D — "amtlich und warm": Struktur und Zahlentypografie der
+   amtlichen Richtung (A), Palette der zugewandten Richtung (C). Siehe das
+   Moodboard und docs/MARKETING.md. Sand statt Weiß, Moos statt Teal, kaum
+   Rundung, praktisch kein Schatten — Trennung läuft über Linien. */
 :root {
-  --ink: #0c1b22;
-  --ink-soft: #46606c;
-  --ink-faint: #7b929c;
-  --bg: #ffffff;
-  --bg-alt: #f3f7f8;
-  --bg-deep: #0c2730;
-  --line: #dde7ea;
-  --brand: #0d6e7a;
-  --brand-strong: #0a545e;
-  --brand-tint: #e3f2f3;
-  --accent: #d98324;
-  --shadow: 0 1px 2px rgba(12, 39, 48, .06), 0 12px 32px rgba(12, 39, 48, .09);
-  --shadow-lg: 0 2px 4px rgba(12, 39, 48, .06), 0 28px 60px rgba(12, 39, 48, .16);
-  --radius: 14px;
+  --ink: #22303f;
+  --ink-soft: #4c5e6c;
+  --ink-faint: #6e7c87;
+  --bg: #fbf8f3;
+  --bg-alt: #f3ede1;
+  --bg-deep: #1b2630;
+  --line: #e4dac9;
+  --brand: #2c6450;
+  --brand-strong: #1c4635;
+  --brand-tint: #dcebe2;
+  --accent: #d9a441;
+  --danger: #a33a2a;
+  /* Fast flach: eine knappe Kontur statt der weichen SaaS-Schatten, die hier
+     bewusst vermieden werden. */
+  --on-brand: #fdfbf6;
+  --shadow: 0 1px 2px rgba(34, 48, 63, .09);
+  --shadow-lg: 0 1px 2px rgba(34, 48, 63, .07), 0 10px 24px rgba(34, 48, 63, .08);
+  --radius: 4px;
   --maxw: 1140px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #e8f1f3;
-    --ink-soft: #a7bfc7;
-    --ink-faint: #7d96a0;
-    --bg: #0b171c;
-    --bg-alt: #101f26;
-    --bg-deep: #081317;
-    --line: #1e343d;
-    --brand: #4fc3cf;
-    --brand-strong: #7adbe5;
-    --brand-tint: #11303a;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
-    --shadow-lg: 0 2px 4px rgba(0, 0, 0, .4), 0 28px 60px rgba(0, 0, 0, .55);
+    --ink: #f2eee4;
+    --ink-soft: #c7c0af;
+    --ink-faint: #8d8a7e;
+    --bg: #171f29;
+    --bg-alt: #1d2630;
+    --bg-deep: #0f151c;
+    --line: #2e3b46;
+    --brand: #74c49e;
+    --brand-strong: #9bdcbc;
+    --brand-tint: #1f3a30;
+    --accent: #e3b968;
+    --danger: #d88871;
+    --on-brand: #0f151c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-lg: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 24px rgba(0, 0, 0, .35);
   }
 }
 
 :root[data-theme="dark"] {
-  --ink: #e8f1f3;
-  --ink-soft: #a7bfc7;
-  --ink-faint: #7d96a0;
-  --bg: #0b171c;
-  --bg-alt: #101f26;
-  --bg-deep: #081317;
-  --line: #1e343d;
-  --brand: #4fc3cf;
-  --brand-strong: #7adbe5;
-  --brand-tint: #11303a;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
-  --shadow-lg: 0 2px 4px rgba(0, 0, 0, .4), 0 28px 60px rgba(0, 0, 0, .55);
+  --ink: #f2eee4;
+  --ink-soft: #c7c0af;
+  --ink-faint: #8d8a7e;
+  --bg: #171f29;
+  --bg-alt: #1d2630;
+  --bg-deep: #0f151c;
+  --line: #2e3b46;
+  --brand: #74c49e;
+  --brand-strong: #9bdcbc;
+  --brand-tint: #1f3a30;
+  --accent: #e3b968;
+  --danger: #d88871;
+  --on-brand: #0f151c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-lg: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 24px rgba(0, 0, 0, .35);
 }
 
 /* --- language switching -------------------------------------- */
@@ -66,17 +80,22 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { line-height: 1.18; letter-spacing: -.02em; margin: 0; }
-h1 { font-size: clamp(2.1rem, 5.2vw, 3.4rem); font-weight: 760; }
-h2 { font-size: clamp(1.55rem, 3.4vw, 2.3rem); font-weight: 720; }
-h3 { font-size: 1.12rem; font-weight: 680; }
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.16;
+  letter-spacing: -.015em;
+  margin: 0;
+}
+h1 { font-size: clamp(2.1rem, 5.2vw, 3.4rem); font-weight: 600; }
+h2 { font-size: clamp(1.55rem, 3.4vw, 2.3rem); font-weight: 600; }
+h3 { font-size: 1.12rem; font-weight: 600; }
 p { margin: 0; }
 
 a { color: var(--brand); }
@@ -109,7 +128,7 @@ header {
   z-index: 50;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 3px double var(--line);
 }
 
 .nav {
@@ -164,7 +183,7 @@ header {
   padding: 5px 13px;
   cursor: pointer;
 }
-.lang button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+.lang button[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); }
 
 /* --- buttons -------------------------------------------------- */
 .btn {
@@ -182,7 +201,7 @@ header {
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: var(--brand); color: #fff; box-shadow: var(--shadow); }
+.btn-primary { background: var(--brand); color: var(--on-brand); box-shadow: var(--shadow); }
 .btn-primary:hover { background: var(--brand-strong); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: var(--bg); }
 .btn-sm { padding: 8px 16px; font-size: .88rem; }
@@ -268,7 +287,14 @@ figcaption { margin-top: 12px; font-size: .88rem; color: var(--ink-faint); }
 @media (min-width: 980px) { .stats { grid-template-columns: repeat(4, 1fr); } }
 
 .stat { background: var(--bg); padding: 24px 22px; }
-.stat b { display: block; font-size: 1.6rem; font-weight: 740; letter-spacing: -.02em; }
+.stat b {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
 .stat span { display: block; margin-top: 6px; font-size: .9rem; color: var(--ink-soft); }
 
 /* --- generic card grid ---------------------------------------- */
@@ -349,7 +375,7 @@ figcaption { margin-top: 12px; font-size: .88rem; color: var(--ink-faint); }
   height: 32px;
   border-radius: 50%;
   background: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
   font-weight: 700;
   font-size: .92rem;
   margin-bottom: 16px;
@@ -358,13 +384,13 @@ figcaption { margin-top: 12px; font-size: .88rem; color: var(--ink-faint); }
 .step p { color: var(--ink-soft); font-size: .96rem; }
 
 /* --- dark band ------------------------------------------------ */
-.band { background: var(--bg-deep); color: #e9f3f5; }
-.band h2, .band h3 { color: #fff; }
-.band p { color: #a9c3ca; }
-.band .eyebrow { color: #68cfdb; }
-.band .card { background: rgba(255, 255, 255, .045); border-color: rgba(255, 255, 255, .11); }
-.band .card p { color: #a9c3ca; }
-.band .icon { background: rgba(104, 207, 219, .16); color: #8fe0ea; }
+.band { background: var(--bg-deep); color: #f0ece1; }
+.band h2, .band h3 { color: #fdfbf6; }
+.band p { color: #c3bfaf; }
+.band .eyebrow { color: #7fcbaa; }
+.band .card { background: rgba(251, 248, 243, .05); border-color: rgba(251, 248, 243, .12); }
+.band .card p { color: #c3bfaf; }
+.band .icon { background: rgba(127, 203, 170, .16); color: #a3e0c4; }
 
 /* --- faq ------------------------------------------------------ */
 .faq { border-top: 1px solid var(--line); }

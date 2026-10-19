@@ -3,15 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRM Register für Salesforce</title>
-<meta name="description" content="CRM Register für Salesforce, powered by North Data: verknüpft jeden Account mit seinem Handelsregistereintrag und hält Registerprofil, Anschrift und Bilanzkennzahlen aktuell.">
-<meta property="og:title" content="CRM Register für Salesforce">
+<title>Handelsregisterdaten im CRM – CRM Register für Salesforce</title>
+<meta name="description" content="CRM Register verknüpft Firmendaten und Unternehmensdaten aus dem Handelsregister direkt mit Ihrem CRM: Registerprofil, Anschrift und Bilanzkennzahlen am Account. Für Salesforce verfügbar, powered by North Data.">
+<meta property="og:title" content="Handelsregisterdaten im CRM – CRM Register für Salesforce">
 <meta property="og:url" content="https://crm-register.com/">
 <link rel="canonical" href="https://crm-register.com/">
-<meta property="og:description" content="Handelsregisterdaten direkt am Account — powered by North Data.">
+<meta property="og:description" content="Firmendaten und Unternehmensdaten aus dem Handelsregister direkt am CRM-Datensatz — powered by North Data.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://crm-register.com/img/01-account-linked.png">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d6e7a'/><path d='M9 10.5h14M9 15.5h10' stroke='white' stroke-width='2.2' stroke-linecap='round'/><path d='M9 20.5h5' stroke='white' stroke-width='2.2' stroke-linecap='round'/><path d='M17 20.8l2.6 2.6 5.4-5.8' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232c6450'/><path d='M9 10.5h14M9 15.5h10' stroke='white' stroke-width='2.2' stroke-linecap='round'/><path d='M9 20.5h5' stroke='white' stroke-width='2.2' stroke-linecap='round'/><path d='M17 20.8l2.6 2.6 5.4-5.8' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CRM Register für Salesforce",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Salesforce",
+  "description": "CRM Register verknüpft Firmendaten und Unternehmensdaten aus dem Handelsregister direkt mit dem CRM-Datensatz. Registerprofil, Anschrift und Bilanzkennzahlen werden automatisch aktuell gehalten.",
+  "url": "https://crm-register.com/",
+  "image": "https://crm-register.com/img/01-account-linked.png",
+  "inLanguage": ["de", "en"],
+  "offers": {
+    "@type": "Offer",
+    "category": "Subscription"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CTW Data Solutions GmbH",
+    "url": "https://crm-register.com/"
+  }
+}
+</script>
+
 <script>
   /* Pick the language before first paint so the page never flashes the wrong one. */
   (function () {
@@ -32,7 +62,7 @@
   <nav class="nav">
     <a class="brand" href="#top">
       <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="7" fill="#0d6e7a"/><path d="M9 10.5h14M9 15.5h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M9 20.5h5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M17 20.8l2.6 2.6 5.4-5.8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect width="32" height="32" rx="7" fill="#2c6450"/><path d="M9 10.5h14M9 15.5h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M9 20.5h5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M17 20.8l2.6 2.6 5.4-5.8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span data-lang="de">CRM Register</span>
       <span data-lang="en">CRM Register</span>
@@ -139,6 +169,10 @@
         <span data-lang="de">Firmendaten gehören ins CRM — nicht in einen zweiten Browser-Tab</span>
         <span data-lang="en">Company data belongs in the CRM — not in a second browser tab</span>
       </h2>
+      <p>
+        <span data-lang="de">Ob man es Handelsregisterauszug, Firmendaten oder Unternehmensdaten nennt — gemeint ist derselbe amtliche Eintrag. Er landet heute selten dort, wo er gebraucht wird.</span>
+        <span data-lang="en">Whether you call it a register extract, company data or business data — it is the same official entry. Today it rarely ends up where it is actually needed.</span>
+      </p>
     </div>
 
     <div class="grid cols-3">
@@ -470,7 +504,7 @@
       <p class="eyebrow"><span data-lang="de">Datenquelle</span><span data-lang="en">Data source</span></p>
       <h2><span data-lang="de">Powered by North Data</span><span data-lang="en">Powered by North Data</span></h2>
       <p>
-        <span data-lang="de">North Data erschließt Handels- und Unternehmensregister sowie veröffentlichte Jahresabschlüsse und macht sie maschinell auswertbar. Dieses Add-on bringt genau diese Daten in Salesforce — ohne dass Sie eine Zeile Integration bauen müssen. Welche Länder und welche Kennzahlen abgedeckt sind, hängt vom Register ab; die jeweils aktuelle Übersicht führt North Data selbst.</span>
+        <span data-lang="de">North Data erschließt Handels- und Unternehmensregister sowie veröffentlichte Jahresabschlüsse und macht die enthaltenen Firmendaten maschinell auswertbar. Dieses Add-on bringt genau diese Unternehmensdaten in Salesforce — ohne dass Sie eine Zeile Integration bauen müssen. Welche Länder und welche Kennzahlen abgedeckt sind, hängt vom Register ab; die jeweils aktuelle Übersicht führt North Data selbst.</span>
         <span data-lang="en">North Data opens up commercial and company registers along with published annual accounts, and makes them machine-readable. This add-on brings exactly that data into Salesforce, with no integration work on your side. Which countries and which indicators are covered depends on the register; North Data maintains the current overview.</span>
       </p>
     </div>
@@ -490,6 +524,10 @@
     </div>
 
     <div class="faq">
+      <details>
+        <summary><span data-lang="de">Firmendaten, Unternehmensdaten, Handelsregisterauszug — ist das dasselbe?</span><span data-lang="en">Company data, business data, register extract — is that the same thing?</span></summary>
+        <p><span data-lang="de">Ja. Gemeint ist in jedem Fall derselbe amtliche Eintrag im Handelsregister: Rechtsform, Registernummer, Anschrift und die veröffentlichten Kennzahlen. Wir verwenden die Begriffe bewusst nebeneinander, weil Teams je nach Abteilung unterschiedlich danach suchen.</span><span data-lang="en">Yes. In every case it is the same official entry in the commercial register: legal form, registration number, address and the published figures. We use the terms interchangeably because different teams search for the same thing in different words.</span></p>
+      </details>
       <details>
         <summary><span data-lang="de">Brauchen unsere Nutzer ein eigenes North-Data-Konto?</span><span data-lang="en">Do our users need their own North Data account?</span></summary>
         <p><span data-lang="de">Nein. Ihre Organisation hat ein Abonnement, der Schlüssel wird einmal zentral hinterlegt. Für Ihre Nutzer gibt es kein zusätzliches Login und keinen zweiten Tab.</span><span data-lang="en">No. Your organisation holds one subscription and the key is entered centrally, once. For your users there is no extra login and no second tab.</span></p>
@@ -513,6 +551,10 @@
       <details>
         <summary><span data-lang="de">Bekommen wir wirklich alle Kennzahlen?</span><span data-lang="en">Do we really get every indicator?</span></summary>
         <p><span data-lang="de">Ja. Es wird nicht auf eine Auswahl reduziert: Jede Kennzahl jedes verfügbaren Geschäftsjahres wird gespeichert und bleibt in Salesforce auswertbar. Die Diagramme zeigen die vier gängigsten, die Tabelle und das Datenmodell enthalten alle.</span><span data-lang="en">Yes. Nothing is reduced to a selection: every indicator of every available financial year is stored and remains reportable in Salesforce. The charts show the four most common ones; the table and the data model hold them all.</span></p>
+      </details>
+      <details>
+        <summary><span data-lang="de">Gibt es CRM Register auch für andere CRM-Systeme?</span><span data-lang="en">Is CRM Register available for other CRM systems?</span></summary>
+        <p><span data-lang="de">Der Start ist Salesforce. Weitere CRM-Systeme wie HubSpot sind in Planung. Melden Sie sich gerne, wenn Ihr System noch nicht dabei ist — das hilft uns bei der Reihenfolge.</span><span data-lang="en">We are starting with Salesforce. Further CRM systems such as HubSpot are planned. Let us know if yours is not yet on the list — it helps us decide the order.</span></p>
       </details>
     </div>
   </div>
