@@ -24,21 +24,43 @@ Die Startsprache richtet sich nach der Browsersprache und wird danach in
 ## Hosting
 
 Die Seite liegt in einem eigenen, öffentlichen Repository und wird über GitHub
-Pages ausgeliefert (*Settings → Pages → Branch `main`, Ordner `/ (root)`*). Das
-Produktrepository bleibt privat, damit Backend, Terraform und interne
-Dokumentation nicht mitveröffentlicht werden.
+Pages ausgeliefert. Das Produktrepository bleibt privat, damit Backend,
+Terraform und interne Dokumentation nicht mitveröffentlicht werden.
+
+- Repository: <https://github.com/sebastianwindeck/company-register-for-salesforce>
+- Aktuell erreichbar unter:
+  <https://sebastianwindeck.github.io/company-register-for-salesforce/>
+- Zieladresse: <https://crm-register.com>
 
 Dieser Ordner ist die Quelle. Änderungen hier, dann veröffentlichen mit:
 
 ```bash
-./site/publish.sh "Impressum ergänzt"
+./site/publish.sh "Was sich geändert hat"
 ```
 
-- Seite: <https://sebastianwindeck.github.io/company-register-for-salesforce/>
-- Repository: <https://github.com/sebastianwindeck/company-register-for-salesforce>
+### Umzug auf crm-register.com — in dieser Reihenfolge
 
-Eine eigene Domain wird unter *Settings → Pages → Custom domain* eingetragen,
-dazu ein CNAME auf `<benutzer>.github.io`.
+Eine `CNAME`-Datei im veröffentlichten Ordner schaltet die eigene Domain
+scharf. **Sie darf erst dazukommen, wenn der DNS steht**: sobald sie da ist,
+leitet GitHub die bisherige Adresse auf `crm-register.com` um, und solange die
+Domain nicht zeigt, ist die Seite nicht erreichbar.
+
+1. Bei Namecheap (dort liegt die Zone) eintragen:
+
+   | Typ | Host | Wert |
+   | --- | --- | --- |
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | CNAME | `www` | `sebastianwindeck.github.io.` |
+
+   Die Parking-Einträge von Namecheap müssen dabei weg.
+2. Prüfen, dass `dig +short crm-register.com` die vier Adressen liefert.
+3. `echo crm-register.com > site/CNAME`, dann `./site/publish.sh`.
+4. In den Repository-Einstellungen unter *Pages* *Enforce HTTPS* setzen, sobald
+   GitHub das Zertifikat ausgestellt hat (dauert nach dem ersten Treffer einige
+   Minuten).
 
 ## Stand
 

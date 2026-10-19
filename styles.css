@@ -419,7 +419,9 @@ footer a { color: var(--ink-soft); }
    The product name is long in both languages and pushed the
    language switch and the call to action off-screen at 390px. */
 @media (max-width: 719px) {
-  .brand span { display: none; }
+  /* "CRM Register" passt, anders als der frühere Produktname, auch neben
+     Sprachumschalter und Schaltfläche. Erst darunter weicht er dem Zeichen. */
+  .brand { font-size: .95rem; }
   .nav { gap: 12px; }
   .nav-actions { flex: none; }
   h1 { max-width: none; }
@@ -471,3 +473,7 @@ body { overflow-x: hidden; }
   margin-bottom: 36px;
 }
 .notice p { color: var(--ink); font-size: .95rem; }
+
+@media (max-width: 399px) {
+  .brand span { display: none; }
+}
